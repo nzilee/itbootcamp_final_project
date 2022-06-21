@@ -66,4 +66,8 @@ public class NavPage {
         return driver.findElement(By.className("f-cn"));
     }
 
+    public WebElement getHeader(){
+        return driver.findElement(By.tagName("h1"));
+    }
+
 }
