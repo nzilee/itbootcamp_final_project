@@ -6,11 +6,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitersPage {
 
-    private WebDriver driver;
     private WebDriverWait wait;
 
-    public WaitersPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
+    public WaitersPage(WebDriverWait wait) {
         this.wait = wait;
     }
 
