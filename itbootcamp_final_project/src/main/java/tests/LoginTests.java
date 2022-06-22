@@ -11,7 +11,10 @@ public class LoginTests extends BasicTest {
         navPage.getEnglishLanguageButton().click();
         navPage.getLoginButton().click();
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 
@@ -43,10 +46,12 @@ public class LoginTests extends BasicTest {
 
         messagePopUpPage.waitForPopUpToBeVisible();
 
-        Assert.assertEquals(messagePopUpPage
-                        .getMessageTextFromPopUp().getText(),
+        Assert.assertEquals(messagePopUpPage.getMessageTextFromPopUp()
+                        .getText(),
                 "User does not exists",
                 "The pop-up message does not contain 'User does not exists' text");
+
+        waitersPage.waitForURLToContain("/login");
 
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/login"),
@@ -71,7 +76,10 @@ public class LoginTests extends BasicTest {
                 "Wrong password",
                 "The message in pop-up dialogue is not as expected");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 
@@ -88,13 +96,15 @@ public class LoginTests extends BasicTest {
 
         waitersPage.waitForURLToContain("/home");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/home"),
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/home"),
                 "Current URL does not contain '/home' route");
     }
 
     @Test(priority = 60)
     public void logout(){
-        Assert.assertTrue(navPage.getLogoutButton().isDisplayed(),
+        Assert.assertTrue(navPage.getLogoutButton()
+                        .isDisplayed(),
                 "The 'Logout' button is not visible on the current page");
         navPage.getLogoutButton().click();
     }

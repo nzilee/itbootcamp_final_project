@@ -46,7 +46,7 @@ public abstract class BasicTest {
         signupPage = new SignupPage(driver);
         citiesPage = new CitiesPage(driver, wait);
         messagePopUpPage = new MessagePopUpPage(driver, wait);
-        waitersPage = new WaitersPage(driver,wait);
+        waitersPage = new WaitersPage(wait);
     }
 
     @BeforeMethod

@@ -20,7 +20,10 @@ public class AdminCitiesTests extends BasicTest{
         navPage.getAdminLink().click();
         navPage.getCitiesLink().click();
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/admin/cities"),
+        waitersPage.waitForURLToContain("/admin/cities");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/admin/cities"),
                 "Current URL does not contain '/admin/cities' route");
     }
 
@@ -55,7 +58,7 @@ public class AdminCitiesTests extends BasicTest{
         messagePopUpPage.waitForSuccessPopUpToBeVisible();
         Assert.assertTrue(messagePopUpPage.getMessageTextFromSuccesPopUp()
                         .getText().contains("Saved successfully"),
-                "The message from pop-up does not equals with expected result");
+                "The message from pop-up should be 'Saved successfully'");
     }
 
     @Test(priority = 40)
@@ -84,7 +87,7 @@ public class AdminCitiesTests extends BasicTest{
         messagePopUpPage.waitForSuccessPopUpToBeVisible();
         Assert.assertTrue(messagePopUpPage.getMessageTextFromSuccesPopUp()
                         .getText().contains("Saved successfully"),
-                "The message from pop-up does not equals with expected result");
+                "The message from pop-up should be 'Saved successfully'");
     }
 
     @Test(priority = 50)
@@ -123,6 +126,6 @@ public class AdminCitiesTests extends BasicTest{
         messagePopUpPage.waitForSuccessPopUpToBeVisible();
         Assert.assertTrue(messagePopUpPage.getMessageTextFromSuccesPopUp()
                         .getText().contains("Deleted successfully"),
-                "The message from pop-up does not equals with expected result");
+                "The message from pop-up should be 'Deleted successfully'");
     }
 }

@@ -9,7 +9,10 @@ public class AuthRoutesTests extends BasicTest{
     public void forbidsVisitsToHomeUrlIfNotAuthenticated(){
         driver.navigate().to(baseUrl + "/home");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 
@@ -17,7 +20,10 @@ public class AuthRoutesTests extends BasicTest{
     public void forbidsVisitsToProfileUrlIfNotAuthenticated(){
         driver.navigate().to(baseUrl + "/profile");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 
@@ -25,7 +31,10 @@ public class AuthRoutesTests extends BasicTest{
     public void forbidsVisitsToAdminCitiesUrlIfNotAuthenticated(){
         driver.navigate().to(baseUrl + "/admin/cities");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 
@@ -33,7 +42,10 @@ public class AuthRoutesTests extends BasicTest{
     public void forbidsVisitsToAdminUsersUrlIfNotAuthenticated(){
         driver.navigate().to(baseUrl + "/admin/users");
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("/login"),
+        waitersPage.waitForURLToContain("/login");
+
+        Assert.assertTrue(driver.getCurrentUrl()
+                        .contains("/login"),
                 "Current URL does not contain '/login' route");
     }
 }

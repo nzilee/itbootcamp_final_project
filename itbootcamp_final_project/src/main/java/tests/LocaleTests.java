@@ -10,8 +10,8 @@ public class LocaleTests extends BasicTest{
         navPage.getLanguagesButton().click();
         navPage.getSpanishLanguageButton().click();
 
-        Assert.assertTrue(navPage.getHeader()
-                .getText().contains("Página de aterrizaje"),
+        Assert.assertTrue(navPage.getHeader().getText()
+                        .contains("Página de aterrizaje"),
                 "Header does not contain 'Página de aterrizaje' text");
     }
 
@@ -20,8 +20,8 @@ public class LocaleTests extends BasicTest{
         navPage.getLanguagesButton().click();
         navPage.getEnglishLanguageButton().click();
 
-        Assert.assertTrue(navPage.getHeader()
-                .getText().contains("Landing"),
+        Assert.assertTrue(navPage.getHeader().getText()
+                        .contains("Landing"),
                 "Header does not contain 'Landing' text");
     }
 
@@ -30,8 +30,8 @@ public class LocaleTests extends BasicTest{
         navPage.getLanguagesButton().click();
         navPage.getChineseLanguageButton().click();
 
-        Assert.assertTrue(navPage.getHeader()
-                .getText().contains("首页"),
+        Assert.assertTrue(navPage.getHeader().getText()
+                        .contains("首页"),
                 "Header does not contain '首页' text");
     }
 
@@ -40,8 +40,8 @@ public class LocaleTests extends BasicTest{
         navPage.getLanguagesButton().click();
         navPage.getFrenchLanguageButton().click();
 
-        Assert.assertTrue(navPage.getHeader()
-                .getText().contains("Page d'atterrissage"),
+        Assert.assertTrue(navPage.getHeader().getText()
+                        .contains("Page d'atterrissage"),
                 "Header does not contain 'Page d'atterrissage' text");
     }
 }
