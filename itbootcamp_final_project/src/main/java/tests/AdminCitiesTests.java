@@ -1,7 +1,5 @@
 package tests;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -72,11 +70,7 @@ public class AdminCitiesTests extends BasicTest{
         citiesPage.getEditButtonFromRow(1).click();
         citiesPage.getNewItemInput().click();
 
-        new Actions(driver)
-                .keyDown(Keys.CONTROL)
-                .sendKeys("a")
-                .sendKeys(Keys.BACK_SPACE)
-                .perform();
+        actionsPage.controlABackSpace(driver);
 
         citiesPage.getNewItemInput().sendKeys("");
         citiesPage.getNewItemInput().sendKeys(newCityName);
