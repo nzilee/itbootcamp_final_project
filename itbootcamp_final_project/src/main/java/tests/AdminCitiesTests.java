@@ -20,8 +20,6 @@ public class AdminCitiesTests extends BasicTest{
         navPage.getAdminLink().click();
         navPage.getCitiesLink().click();
 
-        waitersPage.waitForURLToContain("/admin/cities");
-
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/admin/cities"),
                 "Current URL does not contain '/admin/cities' route");

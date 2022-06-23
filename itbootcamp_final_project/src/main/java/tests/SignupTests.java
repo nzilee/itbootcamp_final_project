@@ -9,8 +9,6 @@ public class SignupTests extends BasicTest{
     public void visitsTheSignupPage (){
         navPage.getSignUpButton().click();
 
-        waitersPage.waitForURLToContain("/signup");
-
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/signup"),
                 "Current URL does not contain '/signup' route");
@@ -42,8 +40,6 @@ public class SignupTests extends BasicTest{
 
         navPage.getSignUpButton().click();
 
-        waitersPage.waitForURLToContain("/signup");
-
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/signup"),
                 "Current URL does not contain '/signup' route");
@@ -60,8 +56,6 @@ public class SignupTests extends BasicTest{
                         .getText(),
                 "E-mail already exists",
                 "The message from pop-up does not equals with expected result");
-
-        waitersPage.waitForURLToContain("/signup");
 
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/signup"),

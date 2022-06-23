@@ -41,7 +41,7 @@ public class CitiesPage {
     public void waitForDeletePopUpToAppear(){
         wait.until(ExpectedConditions
                 .visibilityOfElementLocated(
-                        By.xpath("//*[text() = 'Do you really want to delete this item?']")));
+                        By.className("body-1")));
     }
 
     public WebElement getSaveButtonInEditPopUp(){
@@ -49,7 +49,7 @@ public class CitiesPage {
     }
 
     public WebElement getDeleteButtonInDeletePopUp(){
-        return driver.findElement(By.xpath("//span[contains(text(), ' Delete')]"));
+        return driver.findElement(By.xpath("//button[contains(@class, 'red--text')]"));
     }
 
     public void waitForNumOfRowsToBe(int numOfRows) {

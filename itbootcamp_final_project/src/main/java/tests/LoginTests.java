@@ -11,8 +11,6 @@ public class LoginTests extends BasicTest {
         navPage.getEnglishLanguageButton().click();
         navPage.getLoginButton().click();
 
-        waitersPage.waitForURLToContain("/login");
-
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/login"),
                 "Current URL does not contain '/login' route");
@@ -51,8 +49,6 @@ public class LoginTests extends BasicTest {
                 "User does not exists",
                 "The pop-up message does not contain 'User does not exists' text");
 
-        waitersPage.waitForURLToContain("/login");
-
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/login"),
                 "Current URL does not contain '/login' route");
@@ -75,8 +71,6 @@ public class LoginTests extends BasicTest {
                         .getText(),
                 "Wrong password",
                 "The message in pop-up dialogue is not as expected");
-
-        waitersPage.waitForURLToContain("/login");
 
         Assert.assertTrue(driver.getCurrentUrl()
                         .contains("/login"),
